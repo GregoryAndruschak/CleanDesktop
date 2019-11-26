@@ -2,6 +2,12 @@
 
 Simple python3 script, that moves all your Desktop folder contents to ~/Documents/Desktop/dd.mm.yyyy
 
+If you don't want some folders to be moved, simply add "_" to the end of folder name, e. g.
+
+```
+FolderName_
+```
+
 Works on linux and mac os
 
 ## How to use it

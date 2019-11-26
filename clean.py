@@ -15,19 +15,20 @@ if __name__ == "__main__":
             os.makedirs(today)
         os.chdir(today)
         for file in desktop_files:
-            try:
-                shutil.move(desktop + '/' + file, os.getcwd())
-            except shutil.Error:
-                index = 1
-                same_file_name = True
-                while same_file_name:
-                    try:
-                        temp_name = file.split('.')
-                        temp_name[-2] += '(' + str(index) + ')'
-                        new_file_name = ''.join(temp_name)
-                        os.rename(desktop + '/' + file, desktop + '/' + new_file_name)
-                        file = new_file_name
-                        shutil.move(desktop + '/' + file, os.getcwd())
-                        same_file_name = False
-                    except shutil.Error:
-                        index += 1
+            if not file[-1] == '_':
+                try:
+                    shutil.move(desktop + '/' + file, os.getcwd())
+                except shutil.Error:
+                    index = 1
+                    same_file_name = True
+                    while same_file_name:
+                        try:
+                            temp_name = file.split('.')
+                            temp_name[-2] += '(' + str(index) + ')'
+                            new_file_name = ''.join(temp_name)
+                            os.rename(desktop + '/' + file, desktop + '/' + new_file_name)
+                            file = new_file_name
+                            shutil.move(desktop + '/' + file, os.getcwd())
+                            same_file_name = False
+                        except shutil.Error:
+                            index += 1
