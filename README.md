@@ -21,7 +21,8 @@ Then write and save
 ```
 00 * * * * path/to/python path/to/clean.py
 ```
-This means that the script will be executed every hour at 00 minute
+This means that the script will be executed every hour at 00 minute.
+
 For more examples visit [this site](https://www.adminschoice.com/crontab-quick-reference).
 
 ### Set as launch agent
